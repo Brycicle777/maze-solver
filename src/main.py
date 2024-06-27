@@ -3,14 +3,15 @@ from point import Point
 from line import Line
 from cell import Cell
 
+
 def main():
     win = Window(800, 600)
-#    line_one = Line(Point(200, 50), Point(600, 50))
-    #win.draw_line(line_one, "red")
-    #line_two = Line(Point(400, 50), Point(400, 500))
-    #win.draw_line(line_two, "red")
-    test_cell = Cell(50, 750, 50, 400, win)
-    test_cell.draw()
+    test_cell_one = Cell(50, 100, 50, 100, win, has_right_wall=False)
+    test_cell_one.draw()
+    test_cell_two = Cell(100, 150, 50, 100, win, has_left_wall=False)
+    test_cell_two.draw()
+    test_cell_one.draw_move(test_cell_two, undo=True)
     win.wait_for_close()
+
 
 main()
